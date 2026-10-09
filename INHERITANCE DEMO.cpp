@@ -1,7 +1,7 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-// Single Inheritance
 class Person
 {
 protected:
@@ -13,6 +13,7 @@ public:
     {
         cout << "Enter name: ";
         cin >> name;
+
         cout << "Enter age: ";
         cin >> age;
     }
@@ -42,8 +43,6 @@ public:
     }
 };
 
-
-// Multilevel Inheritance
 class Vehicle
 {
 protected:
@@ -99,10 +98,8 @@ public:
     }
 };
 
-
 int main()
 {
-    // Single Inheritance
     Student s;
 
     cout << "----- Single Inheritance -----" << endl;
@@ -112,8 +109,6 @@ int main()
     cout << "\nStudent Details:" << endl;
     s.displayStudent();
 
-
-    // Multilevel Inheritance
     ElectricCar e;
 
     cout << "\n----- Multilevel Inheritance -----" << endl;
@@ -126,3 +121,4 @@ int main()
 
     return 0;
 }
+```
