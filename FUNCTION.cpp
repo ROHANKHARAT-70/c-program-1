@@ -1,6 +1,7 @@
-include<iostream>
+#include<iostream>
 #include<string>
 using namespace std;
+
 class Student
 {
     public:
@@ -15,7 +16,7 @@ class Student
         cout<<"Enter student roll number:"<<endl;
         cin>>RollNumber;
         cout<<"Enter student name:"<<endl;
-        cin>>Name;
+        getline(cin>>ws, Name);          // reads full name with spaces
         cout<<"Enter student Physics Marks:"<<endl;
         cin>>Physics;
         cout<<"Enter student Chemistry Marks:"<<endl;
@@ -23,6 +24,7 @@ class Student
         cout<<"Enter student Maths Marks:"<<endl;
         cin>>Maths;
     }
+
     void DisplayInfo()
     {
         cout<<"Student's Roll number:"<<RollNumber<<endl;
@@ -31,26 +33,24 @@ class Student
         cout<<"Student's Chemistry Marks:"<<Chemistry<<endl;
         cout<<"Student's Maths Marks:"<<Maths<<endl;
     }
+
     void Result()
     {
         float Percentage;
-        Percentage=(Physics+Chemistry+Maths)/3;
-        cout<<"Result of student:"<<Percentage<<endl;
+        Percentage=(Physics+Chemistry+Maths)/3.0;   // 3.0 keeps decimals
+        cout<<"Percentage of student:"<<Percentage<<"%"<<endl;
     }
 };
+
 int main()
 {
-    Student Student1,Student2,Student3;
-    cout<<"........Student1 Information......"<<endl;
-    Student1.GetInfo();
-    Student1.DisplayInfo();
-    Student1.Result();
-    cout<<"........Student2 Information......"<<endl;
-    Student2.GetInfo();
-    Student2.DisplayInfo();
-    Student2.Result();
-    cout<<"........Student3 Information......"<<endl;
-    Student3.GetInfo();
-    Student3.DisplayInfo();
-    Student3.Result();
+    Student s[3];
+    for(int i=0; i<3; i++)
+    {
+        cout<<"........Student"<<i+1<<" Information......"<<endl;
+        s[i].GetInfo();
+        s[i].DisplayInfo();
+        s[i].Result();
+    }
+    return 0;
 }
